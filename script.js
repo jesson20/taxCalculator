@@ -189,16 +189,14 @@ function calculateTax() {
         let netpayElement = document.getElementById("netpay");
 
         totalDeductions = sssValue + philhealthValue + pagibigValue + incomeTax; 
-        netPay = monthlyIncome - (totalDeductions/12); 
+        netPay = monthlyIncome - totalDeductions; 
 
         incomeTypeDropdown.addEventListener("change", function () {
             const selectedOption = incomeTypeDropdown.value;
             
                 // Check the selected option and update the result
                 if (selectedOption === "monthly") {
-                    sssValue = 1000; 
-                    philhealthValue = 500; 
-                    pagibigValue = 200; 
+                   
                     totalDeductions = sssValue + philhealthValue + pagibigValue + incomeTax; 
                     netPay = monthlyIncome - (totalDeductions/12); 
 
@@ -209,18 +207,19 @@ function calculateTax() {
                     philhealthValue *= 12; 
                     pagibigValue *= 12; 
                     totalDeductions = sssValue + philhealthValue + pagibigValue + incomeTax; 
-                    netPay = annualIncome - totalDeductions; 
+                    netPay = annualIncome - (totalDeductions*12); 
 
                 }
               
             });
 
-            sssElement.value = sssValue.toFixed(2);
+            
+    }
+    sssElement.value = sssValue.toFixed(2);
             philhealthElement.value = philhealthValue.toFixed(2);
             pagibigElement.value = pagibigValue.toFixed(2);
             tdeductionElement.value = totalDeductions.toFixed(2);
             netpayElement.value = netPay.toFixed(2);
-    }
 }
 
 
