@@ -212,14 +212,14 @@ function calculateTax() {
                 }
               
             });
-
-            
-    }
-    sssElement.value = sssValue.toFixed(2);
+            sssElement.value = sssValue.toFixed(2);
             philhealthElement.value = philhealthValue.toFixed(2);
             pagibigElement.value = pagibigValue.toFixed(2);
             tdeductionElement.value = totalDeductions.toFixed(2);
             netpayElement.value = netPay.toFixed(2);
+            
+    }
+   
 }
 
 
