@@ -1,6 +1,6 @@
 const inputBox = document.getElementById("input-box");
 let excess, excessTax, incomeTax;
-let sssValue, philhealthValue, pagibigValue; 
+let sssValue = 0, philhealthValue = 0, pagibigValue= 0; 
 
 // Get references to the dropdown and result elements
 const incomeTypeDropdown = document.getElementById("monthlyOrAnnual");
