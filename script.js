@@ -211,6 +211,7 @@ function calculateTax() {
 
                 }
               
+                
             });
             sssElement.value = sssValue.toFixed(2);
             philhealthElement.value = philhealthValue.toFixed(2);
