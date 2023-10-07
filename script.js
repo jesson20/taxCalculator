@@ -205,11 +205,11 @@ function calculateTax() {
                     
                 } 
                 else if (selectedOption === "annual") {
-                    sssValue = 1000*12; 
-                    philhealthValue = 500*12; 
-                    pagibigValue = 200*12; 
-                    totalDeductions = (sssValue + philhealthValue + pagibigValue + incomeTax)*12; 
-                    netPay = totalIncome - totalDeductions; 
+                    sssValue *= 12; 
+                    philhealthValue *= 12; 
+                    pagibigValue *= 12; 
+                    totalDeductions = sssValue + philhealthValue + pagibigValue + incomeTax; 
+                    netPay = annualIncome - totalDeductions; 
 
                 }
               
