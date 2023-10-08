@@ -1,4 +1,4 @@
-const inputBox = document.getElementById("input-box");
+let inputElement = document.getElementById("input-box");
 let excess, excessTax, incomeTax;
 let sssValue = 0, philhealthValue = 0, pagibigValue= 100; 
 
@@ -6,16 +6,15 @@ let sssValue = 0, philhealthValue = 0, pagibigValue= 100;
 const incomeTypeDropdown = document.getElementById("monthlyOrAnnual");
 
 // Add an event listener to the dropdown to detect changes
-incomeTypeDropdown.addEventListener("change", function () {
+incomeTypeDropdown.addEventListener("change", function () { 
     calculateTax();
     });
 
 function calculateTax() {
-    if (inputBox.value === '') {
+    if (inputElement.value === '') {
         alert("You must write something!");
     } else {
-        let inputElement = document.getElementById("input-box");
-
+        let sssValue = 0, philhealthValue = 0, pagibigValue= 100; 
         let monthlyIncome = inputElement.value;
 
         let annualIncome = monthlyIncome * 12;
@@ -184,13 +183,11 @@ function calculateTax() {
         netPay = monthlyIncome - totalDeductions; 
 
         const selectedOption = incomeTypeDropdown.value;
+
         // Check the selected option and update the result
         if (selectedOption === "monthly") {
-           
-        totalDeductions = sssValue + philhealthValue + pagibigValue + incomeTax; 
-        netPay = monthlyIncome - totalDeductions; 
-
-            
+                totalDeductions = sssValue + philhealthValue + pagibigValue + incomeTax; 
+                netPay = monthlyIncome - totalDeductions;  
         } 
         else if (selectedOption === "annual") {
             sssValue *= 12; 
@@ -210,6 +207,7 @@ function calculateTax() {
     }
    
 }
+
 
 
 
