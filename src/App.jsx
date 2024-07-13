@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
   const [monthlyIncome, setMonthlyIncome] = useState('');
@@ -9,7 +7,7 @@ function App() {
     incomeTax: 0,
     sssValue: 0,
     philhealthValue: 0,
-    pagibigValue: 100,
+    pagibigValue: 0,
     totalDeductions: 0,
     netPay: 0,
   });
@@ -148,26 +146,33 @@ function App() {
   };
 
   return (
-    <div>
-      <div className="container">
-      <h2 className="title">Philippine Tax Calculator</h2>
-        <div className="taxApp">
+    <div className="m-0 p-0 font-serif h-full bg-fuchsia-400" >
+      <div className="p-1 lg:mx-96">
+      <h2 className="text-black text-bold text-lg my-5 lg:mx-2 text-center justify-center lg:text-4xl lg:p-5 lg:text-start">Philippine Tax Calculator</h2>
+        <div className="bg-white mx-1 lg:mx-44 text-center  justify-center">
          
         
-          <div className="row">
+          <div className="justify-center flex text-center items-center bg-white border-fuchsia-800 border">
             <input
+              className='flex border-none outline-none bg-transparent p-5 text-center text-2xl lg:my-3 lg:text-4xl'
               type="number"
               id="input-box"
               value={monthlyIncome}
               onChange={handleIncomeChange}
-              placeholder="Enter monthly income"
+              placeholder="Enter Monthly Income"
             />
          
-            <button onClick={calculateTax}>Calculate</button>
           </div>
-      <div>
-        <h2 className='resultTitle'>Computation Result</h2>
+
+          <div className='border-x-fuchsia-800 border'>
+          <div className='m-4 items-center text-center'>
+          <button className='items-center text-center border-none outline-none py-2 px-4 bg-fuchsia-800 text-sm cursor-pointer rounded-3xl text-white lg:text-base' 
+          onClick={calculateTax}><a href="#netPay">Calculate</a></button>
+          </div>
+      <div className='mt-10 lg:mt-14'>
+        <h2 className='text-base lg:text-3xl'>Computation Result</h2>
           <select
+            className='text-xs lg:text-base bg-fuchsia-800 border-none text-white'
             id="monthlyOrAnnual"
             value={incomeType}
             onChange={handleIncomeTypeChange}
@@ -176,20 +181,50 @@ function App() {
             <option value="annual">Annual</option>
           </select>
           <br/>
+          </div>
 
-        
-          <p>Income Tax: <input id="itax" value={results.incomeTax} readOnly /></p>
-          <p>SSS: <input id="sss" value={results.sssValue} readOnly /></p>
-          <p>PhilHealth: <input id="philhealth" value={results.philhealthValue} readOnly /></p>
-          <p>Pag-IBIG: <input id="pagibig" value={results.pagibigValue} readOnly /></p>
-          <p>Total Deductions: <input id="tdeduction" value={results.totalDeductions} readOnly /></p>
-          <div className="final">
-          <p>Net Pay: <input id="netpay" value={results.netPay} readOnly /></p>
-        </div>
+          <div className='mt-4 border-y border-fuchsia-800'>
+            <p className='text-start text-xs ml-1 lg:text-xl'>Income Tax: </p> 
+            <input  className='flex-1 border-none outline-none bg-transparent pb-2 text-center justify-center lg:text-2xl'
+            id="itax" value={results.incomeTax} readOnly />
+            </div>
+
+            <div className='border-b border-fuchsia-800'>
+            <p className='text-start text-xs ml-1 lg:text-xl' >SSS: </p>
+              <input  className='flex-1 border-none outline-none bg-transparent pb-2 text-center justify-center lg:text-2xl'
+            id="sss" value={results.sssValue} readOnly />
+            </div>
+
+            <div className='border-b border-fuchsia-800'>
+            <p className='text-start text-xs ml-1 lg:text-xl'>PhilHealth: </p> 
+            <input  className='flex-1 border-none outline-none bg-transparent pb-2 text-center justify-center lg:text-2xl'
+            id="philhealth" value={results.philhealthValue} readOnly />
+            </div>
+            
+            <div className='border-b border-fuchsia-800'>
+            <p className='text-start text-xs ml-1 lg:text-xl' >Pag-IBIG: </p>
+            <input  className='flex-1 border-none outline-none bg-transparent pb-2 text-center justify-center lg:text-2xl'
+            id="pagibig" value={results.pagibigValue} readOnly />
+            </div>
+
+            <div className='border-b border-fuchsia-800'>
+            <p className='text-start text-xs ml-1 lg:text-xl'>Total Deductions: </p>
+            <input  className='flex-1 border-none outline-none bg-transparent pb-2 text-center justify-center lg:text-2xl'
+            id="tdeduction" value={results.totalDeductions} readOnly />
+            </div>
+
+          </div>
+          
+          <div className=' bg-fuchsia-400 lg:pb-16' id="netPay">
+          <p className='text-start ml-1 lg:text-2xl'>Net Pay: </p>
+            <input className="text-black items-center justify-between mb-6 text-bold text-3xl text-center bg-fuchsia-400 py-3 lg:text-5xl"
+             id="netpay" value={results.netPay} readOnly />
         </div>
 </div>
 </div>
 </div>
 );
-}
+};
+
+
 export default App;

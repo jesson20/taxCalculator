@@ -2,54 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/taxIcon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Philippine Tax Calculator</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div className="container">
-      <div className="taxApp">
-        <h2>Philippine Tax Calculator<img src="images/taxicon.png" /></h2>
-
-        <div className="row">
-          <input
-            type="number"
-            id="input-box"
-            placeholder="Input Your Monthly Income"
-          />
-          <button onclick="calculateTax()">Calculate</button>
-        </div>
-
-        <form>
-          <h2>Computation Result</h2>
-          <select name="monthlyOrAnnual" id="monthlyOrAnnual">
-            <option id="option1" value="monthly">Monthly</option>
-            <option id="option2" value="annual">Annual</option>
-          </select>
-          <br />
-          <label for="itax">Income Tax:</label>
-          <input type="number" id="itax" name="itax" /><br />
-          <label for="sss">SSS:</label>
-          <input type="number" id="sss" name="sss" /><br />
-          <label for="philhealth">PhilHealth:</label>
-          <input type="number" id="philhealth" name="philhealth" /><br />
-          <label for="pagibig">Pag-ibig:</label>
-          <input type="number" id="pagibig" name="pagibig" /><br />
-          <label for="tdeduction">Total Deductions:</label>
-          <input type="number" id="tdeduction" name="tdeduction" /> <br />
-          <br />
-          <div className="final">
-            <label for="netpay">Net Pay: </label>
-            <input type="number" id="netpay" name="netpay" />
-          </div>
-        </form>
-        <!--  <ul id="list-container">
-         <li className="checked">Task 1</li>
-          <li>Task 2</li>
-          <li>Task 3</li> 
-        </ul> -->
-      </div>
-    </div>
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
